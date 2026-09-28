@@ -462,6 +462,20 @@ h1, h2, h3, h4 {
     border-color: var(--accent-color);
 }
 
+.form-success {
+    text-align: center;
+    padding: 2rem;
+}
+
+.form-success h3 {
+    margin: 1rem 0 0.5rem;
+    color: var(--primary-color);
+}
+
+.form-success p {
+    color: var(--text-muted);
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
