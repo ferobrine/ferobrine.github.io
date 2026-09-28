@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Fernando José Gracia Choin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Reset & Base --- */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1a2332;
+            --accent: #3498db;
+            --text: #333;
+            --muted: #555;
+            --light: #f8f9fa;
+            --border: #dce1e6;
+        }
+
+        html { font-size: 15px; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.5;
+            background: #e9ecef;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        /* --- A4 Page container --- */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background: #fff;
+            padding: 40px 50px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            border-radius: 4px;
+        }
+
+        /* --- Header / Name --- */
+        .cv-header {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .cv-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .cv-header .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .cv-contact {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .cv-contact a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* --- Sections --- */
+        .cv-section {
+            margin-bottom: 22px;
+        }
+
+        .cv-section h2 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary);
+            border-bottom: 1.5px solid var(--border);
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+
+        /* --- Profile --- */
+        .cv-profile p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Education & Experience items --- */
+        .cv-item {
+            margin-bottom: 14px;
+        }
+
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .cv-item h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .cv-item .cv-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .cv-item .cv-institution {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .cv-item p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        /* --- Skills --- */
+        .cv-skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .cv-skill-tag {
+            background: var(--light);
+            border: 1px solid var(--border);
+            color: var(--primary);
+            padding: 5px 14px;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* --- Projects --- */
+        .cv-project {
+            margin-bottom: 14px;
+        }
+
+        .cv-project h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .cv-project .cv-project-tech {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .cv-project p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .cv-project a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        /* --- Languages --- */
+        .cv-lang-item {
+            display: flex;
+            justify-content: space-between;
+            max-width: 350px;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+
+        .cv-lang-item .cv-lang-name { font-weight: 600; color: var(--primary); }
+        .cv-lang-item .cv-lang-level { color: var(--muted); }
+
+        /* --- Download bar (hidden in print) --- */
+        .cv-actions {
+            width: 210mm;
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .cv-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .cv-btn:hover { background: var(--accent); }
+
+        /* --- Print styles --- */
+        @media print {
+            html { font-size: 14px; }
+            body { background: none; padding: 0; }
+            .page { box-shadow: none; padding: 30px 40px; width: 100%; min-height: auto; border-radius: 0; }
+            .cv-actions { display: none !important; }
+            @page { margin: 10mm; size: A4; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-actions">
+        <button class="cv-btn" onclick="window.print()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            Guardar como PDF
+        </button>
+        <a class="cv-btn" href="index.html" style="background: var(--accent);">
+            ← Volver al portfolio
+        </a>
+    </div>
+
+    <div class="page">
+        <!-- Header -->
+        <div class="cv-header">
+            <div>
+                <h1>Fernando José Gracia Choin</h1>
+                <div class="subtitle">Ingeniería Informática & ADE — Universidad de Granada</div>
+            </div>
+            <div class="cv-contact">
+                <div><a href="mailto:fferobrine@gmail.com">fferobrine@gmail.com</a></div>
+                <div><a href="https://github.com/ferobrine" target="_blank">github.com/ferobrine</a></div>
+                <div>Granada, España</div>
+            </div>
+        </div>
+
+        <!-- Perfil -->
+        <div class="cv-section cv-profile">
+            <h2>Perfil</h2>
+            <p>Estudiante de 5º curso del Doble Grado en Ingeniería Informática y Administración y Dirección de Empresas en la Universidad de Granada. Apasionado por la informática y la tecnología, con un fuerte interés en la economía, la historia, el sector de defensa y el desarrollo de videojuegos. Combino habilidades técnicas con una visión analítica y empresarial para abordar problemas complejos desde múltiples perspectivas.</p>
+        </div>
+
+        <!-- Educación -->
+        <div class="cv-section">
+            <h2>Educación</h2>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <h3>Doble Grado en Ingeniería Informática y ADE</h3>
+                    <span class="cv-date">2021 — Actualidad</span>
+                </div>
+                <div class="cv-institution">Universidad de Granada (UGR)</div>
+                <p>5º curso. Formación integral en desarrollo de software, arquitectura de sistemas, bases de datos, gestión empresarial, finanzas y economía.</p>
+            </div>
+        </div>
+
+        <!-- Proyectos -->
+        <div class="cv-section">
+            <h2>Proyectos Académicos</h2>
+            <div class="cv-project">
+                <div class="cv-item-header">
+                    <h3>ABM: Income & Interpersonal Relations Impact on Happiness</h3>
+                    <span class="cv-date">Economía Mundial — UGR</span>
+                </div>
+                <div class="cv-project-tech">Simulación · ABM · Python</div>
+                <p>Modelo basado en agentes que simula cómo los ingresos y las relaciones interpersonales afectan la felicidad. Desarrollado en colaboración para la asignatura de Economía Mundial.</p>
+                <a href="https://github.com/jxliian/ABM-Income-Interpersonal-Relations-Impact-on-Happiness" target="_blank">github.com/jxliian/ABM-Income-Interpersonal-Relations-Impact-on-Happiness</a>
+            </div>
+            <div class="cv-project">
+                <div class="cv-item-header">
+                    <h3>Sistema de Información de Red Social (Oracle DBMS)</h3>
+                    <span class="cv-date">DDSI — UGR</span>
+                </div>
+                <div class="cv-project-tech">Oracle · SQL · Python · Bases de Datos</div>
+                <p>Diseño e implementación completa de un sistema de información para una red social: toma de requisitos, diagramas de flujo de datos, esquema E/R, normalización y cliente Python sobre Oracle. Proyecto en equipo de cinco personas.</p>
+                <a href="https://github.com/Ismael-Sallami/oracle-dbms-project" target="_blank">github.com/Ismael-Sallami/oracle-dbms-project</a>
+            </div>
+        </div>
+
+        <!-- Habilidades técnicas -->
+        <div class="cv-section">
+            <h2>Habilidades Técnicas</h2>
+            <div class="cv-skills-grid">
+                <span class="cv-skill-tag">C++</span>
+                <span class="cv-skill-tag">Java</span>
+                <span class="cv-skill-tag">Python</span>
+                <span class="cv-skill-tag">SQL</span>
+                <span class="cv-skill-tag">HTML</span>
+                <span class="cv-skill-tag">LaTeX</span>
+                <span class="cv-skill-tag">Godot</span>
+            </div>
+        </div>
+
+        <!-- Idiomas -->
+        <div class="cv-section">
+            <h2>Idiomas</h2>
+            <div class="cv-lang-item">
+                <span class="cv-lang-name">Español</span>
+                <span class="cv-lang-level">Nativo</span>
+            </div>
+            <div class="cv-lang-item">
+                <span class="cv-lang-name">Inglés</span>
+                <span class="cv-lang-level">B2 — Cambridge FCE</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

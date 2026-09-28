@@ -3,134 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Blog de Fer</title>
-    <style>
-        /* Estilo global */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #2e2b47, #8e44ad);
-            color: #fff;
-            text-align: center;
-        }
-
-        header {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 40px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            border-bottom: 3px solid #00b894;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-            color: #00b894;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        main {
-            padding: 60px 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
-            margin-top: 40px;
-        }
-
-        main h2 {
-            font-size: 2rem;
-            color: #fff;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        main p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #b2bec3;
-        }
-
-        .button-container {
-            margin-top: 30px;
-        }
-
-        .button-container a {
-            text-decoration: none;
-            background-color: #e74c3c;
-            color: #fff;
-            padding: 12px 25px;
-            margin: 15px;
-            font-size: 1rem;
-            border-radius: 5px;
-            display: inline-block;
-            transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .button-container a:hover {
-            background-color: #d63031;
-            transform: translateY(-3px);
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            font-size: 0.9rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-        }
-
-        footer a {
-            color: #00b894;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Estilo para un toque retro */
-        .retro-wave {
-            font-family: 'Courier New', Courier, monospace;
-            color: #ff6f61;
-            text-shadow: 0 0 10px rgba(255, 111, 97, 0.8), 0 0 20px rgba(255, 111, 97, 0.8);
-        }
-
-        .neon-border {
-            border: 3px solid #00b894;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 184, 148, 0.7);
-        }
-    </style>
+    <title>Fernando José Gracia Choin - Portfolio Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 class="retro-wave">¡Bienvenido al Blog de Fer!</h1>
-    </header>
-    <main>
-        <h2>Sobre mí</h2>
-        <p>
-            Hola, soy Fer y estudio el doble grado de Informática y ADE en la Universidad de Granada (UGR).
-        </p>
-        <p>
-            Este es mi espacio personal donde comparto ideas, aprendizajes y proyectos relacionados con la informática, la tecnología y más.
-        </p>
-        
-        <!-- Botones de navegación -->
-        <div class="button-container">
-            <a href="proyectos.html">Mis Proyectos</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="sobre.html">Más Sobre Mí</a>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">F. Gracia</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#educacion">Educación</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
         </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero fade-in">
+            <div class="container">
+                <p class="hero-greeting">Hola, soy</p>
+                <h1 class="hero-title">Fernando José Gracia Choin</h1>
+                <h2 class="hero-subtitle">Ingeniería Informática & ADE</h2>
+                <p class="hero-bio">Estudiante apasionado por la informática, con un profundo interés en la historia, la economía, el sector de defensa y los videojuegos. Busco combinar mis habilidades técnicas con una visión analítica del entorno global.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">Contactar</a>
+                    <a href="cv.html" target="_blank" class="btn btn-outline">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Descargar CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="about section fade-in">
+            <div class="container">
+                <h2 class="section-title">Sobre mí</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Soy estudiante de 5º curso del Doble Grado en Ingeniería Informática y Administración y Dirección de Empresas (ADE) en la Universidad de Granada (UGR).</p>
+                        <p>Mi trayectoria académica me ha permitido desarrollar una mentalidad estructurada, uniendo la precisión técnica de la ingeniería con la visión estratégica de los negocios.</p>
+                        <p>Más allá del código, mantengo un interés constante por la economía, la historia y la geopolítica (como el sector de defensa), además de los videojuegos. Esta diversidad de intereses me permite abordar los problemas tecnológicos desde diferentes perspectivas y diseñar soluciones con un impacto real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="projects section bg-light fade-in">
+            <div class="container">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>ABM: Income & Interpersonal Relations Impact on Happiness</h3>
+                            <p>Un modelo basado en agentes (ABM) que simula cómo los ingresos y las relaciones interpersonales afectan la felicidad. Desarrollado en colaboración para la asignatura de Economía Mundial.</p>
+                            <div class="project-tech">
+                                <span>Simulación</span>
+                                <span>Economía</span>
+                                <span>ABM</span>
+                                <span>Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/jxliian/ABM-Income-Interpersonal-Relations-Impact-on-Happiness" target="_blank" rel="noopener noreferrer">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    Ver en GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Sistema de Información de Red Social (Oracle DBMS)</h3>
+                            <p>Diseño e implementación completa de un sistema de información para una red social: desde la toma de requisitos hasta la base de datos, incluyendo diagramas de flujo de datos, esquema E/R, normalización y un cliente Python sobre Oracle. Proyecto en equipo para la asignatura DDSI en la UGR.</p>
+                            <div class="project-tech">
+                                <span>Oracle</span>
+                                <span>SQL</span>
+                                <span>Python</span>
+                                <span>DDSI</span>
+                                <span>Bases de Datos</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Ismael-Sallami/oracle-dbms-project" target="_blank" rel="noopener noreferrer">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    Ver en GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills section fade-in">
+            <div class="container">
+                <h2 class="section-title">Tecnologías y Habilidades</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <div class="skill-badges">
+                            <span class="badge">C++</span>
+                            <span class="badge">Java</span>
+                            <span class="badge">Python</span>
+                            <span class="badge">SQL</span>
+                            <span class="badge">HTML</span>
+                            <span class="badge">LaTeX</span>
+                            <span class="badge">Godot</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="educacion" class="education section bg-light fade-in">
+            <div class="container">
+                <h2 class="section-title">Educación y Certificaciones</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Actualidad</div>
+                        <div class="timeline-content">
+                            <h3>Doble Grado en Ingeniería Informática y ADE</h3>
+                            <h4>Universidad de Granada (UGR)</h4>
+                            <p>Estudiante de 5º curso. Formación integral en desarrollo de software, arquitectura de sistemas y gestión empresarial.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Certificación</div>
+                        <div class="timeline-content">
+                            <h3>Inglés - Nivel B2 (Cambridge FCE)</h3>
+                            <p>Certificado por Cambridge English. Competencia profesional para comunicación oral y escrita.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact section fade-in">
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <p class="contact-intro">Actualmente estoy abierto a nuevas oportunidades y colaboraciones. Si quieres ponerte en contacto, no dudes en escribirme.</p>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <a href="mailto:fferobrine@gmail.com" class="contact-card">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <span>fferobrine@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/ferobrine" target="_blank" rel="noopener noreferrer" class="contact-card">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            <span>github.com/ferobrine</span>
+                        </a>
+                    </div>
+                    
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Formulario de demostración. Por favor, usa el email directamente.');">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" rows="5" required placeholder="¿En qué puedo ayudarte?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
+
     <footer>
-        <p>
-            &copy; 2024 Ferobrine. Puedes visitar mi <a href="https://github.com/ferobrine" target="_blank">GitHub</a> para explorar más proyectos.
-        </p>
+        <div class="container">
+            <p>&copy; 2026 Fernando José Gracia Choin. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
