@@ -56,28 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fade-in').forEach(element => {
         observer.observe(element);
     });
-
-    // Formulario de contacto funcional
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            const subject = encodeURIComponent('Contacto desde portfolio - ' + name);
-            const body = encodeURIComponent(
-                'Nombre: ' + name + '\n' +
-                'Email: ' + email + '\n\n' +
-                'Mensaje:\n' + message
-            );
-
-            window.location.href = 'mailto:fferobrine@gmail.com?subject=' + subject + '&body=' + body;
-
-            // Mostrar mensaje de éxito
-            contactForm.innerHTML = '<div class="form-success"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><h3>¡Mensaje preparado!</h3><p>Se ha abierto tu cliente de correo. Si no se abrió, puedes escribirme directamente a <a href="mailto:fferobrine@gmail.com">fferobrine@gmail.com</a></p></div>';
-        });
-    }
 });
